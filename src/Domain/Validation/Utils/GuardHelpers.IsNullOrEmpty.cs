@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain.Common.GuardClauseHelpers;
+namespace Domain.Validation.Utils;
 
 public static partial class GuardHelpers
 {

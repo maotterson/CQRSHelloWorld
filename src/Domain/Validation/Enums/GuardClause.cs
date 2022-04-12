@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain.Common.GuardClauseHelpers;
+namespace Domain.Validation.Enumss;
 
-internal enum GuardClause
+public enum GuardClause
 {
     NULL_OR_EMPTY,
     MINIMUM_LENGTH,

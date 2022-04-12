@@ -3,17 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Domain.Validation.Entities;
+using Domain.Validation.Enumss;
 
-namespace Domain.Common.GuardClauseHelpers;
+namespace Domain.Validation.Utils;
 
 public static partial class GuardHelpers
 {
-    public static (bool isValid, string[]? error) GuardAgainst(this string property, params (GuardClause clause, int? value)[] rules)
+    public static string GuardAgainst(this string property, PropertyRules rules)
     {
         foreach(var rule in rules)
         {
-            property.Check(rule);
+            var (isValid, error) = property.Check(rule);
+            if (!isValid) throw new(error);
         }
+        return property;
     }
 
     private static (bool isValid, string? error) Check(this string property, (GuardClause clause, int? value) rule)
