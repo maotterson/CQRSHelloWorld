@@ -4,12 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain.Common.Validation;
+namespace Domain.Common.GuardClauseHelpers;
 
-public enum ValidationRule
+internal enum GuardClause
 {
-    NULL,
     NULL_OR_EMPTY,
-    MINIMUMLENGTH,
-    MAXIMUMLENGTH
+    MINIMUM_LENGTH,
+    MAXIMUM_LENGTH
 }
