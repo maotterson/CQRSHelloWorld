@@ -9,7 +9,7 @@ using Domain.Validation.Utils;
 
 namespace Domain.Teams.Entities;
 
-internal class TeamName
+public class TeamName
 {
     public string Name { get; init; }
     private static readonly PropertyRules nameRules = new(
